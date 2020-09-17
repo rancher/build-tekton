@@ -1,0 +1,13 @@
+#!/bin/bash
+set -e
+
+source $(dirname $0)/version
+
+cd $(dirname $0)/..
+
+mkdir -p bin
+if [ "$(uname)" = "Linux" ]; then
+    LINKFLAGS="-extldflags -static -s"
+fi
+CGO_ENABLED=0 go build -ldflags "$LINKFLAGS" -o bin/entrypoint ./cmd/entrypoint
+CGO_ENABLED=0 go build -ldflags "$LINKFLAGS" -o bin/git-init ./cmd/git-init
