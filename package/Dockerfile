@@ -1,4 +1,4 @@
-FROM alpine:3.12
+FROM alpine:3.13.5
 RUN apk -U add git openssh && adduser -u 1000 -D gituser
 USER 1000
 COPY bin/* /usr/bin/
