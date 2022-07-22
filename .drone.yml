@@ -1,5 +1,6 @@
 ---
 kind: pipeline
+type: docker
 name: amd64
 
 platform:
@@ -41,6 +42,7 @@ volumes:
 
 ---
 kind: pipeline
+type: docker
 name: arm64
 
 platform:
@@ -82,6 +84,7 @@ volumes:
 
 ---
 kind: pipeline
+type: docker
 name: s390x
 
 platform:
@@ -129,6 +132,7 @@ volumes:
 
 ---
 kind: pipeline
+type: docker
 name: manifest
 
 platform:
@@ -162,5 +166,4 @@ steps:
 depends_on:
 - amd64
 - arm64
-- arm
 - s390x
