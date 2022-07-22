@@ -150,7 +150,6 @@ steps:
     platforms:
       - linux/amd64
       - linux/arm64
-      - linux/arm
       - linux/s390x
     target: "rancher/tekton-utils:${DRONE_TAG}"
     template: "rancher/tekton-utils:${DRONE_TAG}-ARCH"
