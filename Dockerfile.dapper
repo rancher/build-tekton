@@ -1,10 +1,10 @@
-FROM golang:1.16.8-alpine3.14
+FROM registry.suse.com/bci/golang:1.18
 
 ARG DAPPER_HOST_ARCH
 ENV ARCH $DAPPER_HOST_ARCH
 ENV TEKTON_TAG v0.16.3
 
-RUN apk -U add bash git gcc musl-dev docker vim less file curl wget ca-certificates
+RUN zypper -n install --no-recommends git docker vim curl wget ca-certificates
 RUN mkdir -p /go/src/github.com/tektoncd/pipeline && \
 	git clone --depth 1 --branch ${TEKTON_TAG} https://github.com/tektoncd/pipeline.git /go/src/github.com/tektoncd/pipeline
 
