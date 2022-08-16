@@ -2,7 +2,7 @@ FROM registry.suse.com/bci/golang:1.18
 
 ARG DAPPER_HOST_ARCH
 ENV ARCH $DAPPER_HOST_ARCH
-ENV TEKTON_TAG v0.38.2
+ENV TEKTON_TAG v0.36.0
 
 RUN zypper -n install --no-recommends git docker vim curl wget ca-certificates
 RUN mkdir -p /go/src/github.com/tektoncd/pipeline && \
