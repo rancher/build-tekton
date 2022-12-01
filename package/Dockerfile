@@ -1,4 +1,4 @@
-FROM registry.suse.com/bci/bci-base:15.4.27.14.20
+FROM registry.suse.com/bci/bci-base:15.4.27.14.21
 RUN zypper -n update && \
     zypper -n install --no-recommends openssh git && \
     zypper -n clean -a
