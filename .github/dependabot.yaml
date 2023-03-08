@@ -11,6 +11,6 @@ updates:
     package-ecosystem: "docker"
     directory: "/package/"
     schedule:
-      interval: "monthly"
+      interval: "weekly"
     labels:
       - "dependencies"
