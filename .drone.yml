@@ -77,21 +77,6 @@ steps:
     event:
     - tag
 
-- name: github_release
-  image: plugins/github-release
-  settings:
-    api_key:
-      from_secret: github_token
-    prerelease: false
-  when:
-    instance:
-      - drone-publish.rancher.io
-    ref:
-      - refs/head/master
-      - refs/tags/*
-    event:
-      - tag
-
 volumes:
 - name: docker
   host:
