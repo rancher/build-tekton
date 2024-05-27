@@ -1,8 +1,0 @@
-FROM registry.suse.com/bci/bci-base:15.5
-RUN zypper -n update && \
-    zypper -n install --no-recommends openssh git && \
-    zypper -n clean -a
-RUN useradd -U -m gituser
-USER gituser
-COPY bin/* /usr/bin/
-ENTRYPOINT ["entrypoint"]
