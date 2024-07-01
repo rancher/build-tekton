@@ -12,7 +12,7 @@ COPY scripts scripts
 RUN /usr/bin/bash scripts/build
 
 
-FROM registry.suse.com/bci/bci-base:15.5
+FROM registry.suse.com/bci/bci-base:15.6
 RUN zypper -n update && \
     zypper -n install --no-recommends openssh git && \
     zypper -n clean -a
